@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Q9</title>
+</head>
+<body>
+   <script>
+      // 1
+      const sumAll = (...nums) => nums.reduce((acc, c) => acc + c)
+      console.log(sumAll(1, 2))
+
+      // 2
+      const addOnlyNums = (...nums) => nums.reduce((acc, c) => typeof c === "number" ? acc + c : acc, 0)
+      console.log(addOnlyNums(1, "s", 2, 4, 1))
+
+      // 3
+      const combineTwoArrays = (ar1, ar2) => [...ar1, ...ar2]
+      console.log(combineTwoArrays([1, 4], [3, 6]))
+
+      // 4
+      const sumEveryOther = (...nums) => nums.reduce((acc, c, i) => !(i % 2) ? acc + c : acc, 0)
+      console.log(sumEveryOther(1, 2, 3, 4, 5))
+
+      // 5
+      const onlyUniques = (...nums) => nums.reduce((acc, c) => acc.includes(c) ? acc : [...acc, c], [])
+      console.log(onlyUniques(1, 2, 3, 3, 1))
+
+      // 6
+      const combineAllArrays = (...arrays) => arrays.reduce((acc, c) => [...acc, ...c])
+      console.log(combineAllArrays([1, 2], [3, 4], [5, 6]))
+
+      // 7
+      const squareAndSum = (...nums) => nums.reduce((acc, n) => acc + (n ** 2), 0)
+      console.log(squareAndSum(5, 2, 2))
+   </script>
+</body>
+</html>
