@@ -15,7 +15,7 @@ void display(int odometer, double emit, double max1, double max2) {
       else
          printf("Emissions exceed permitted level of %lf grams/mile.", max2);
    }
-}
+}  
 
 void main() {
    int plt_num, odometer;

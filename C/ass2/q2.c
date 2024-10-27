@@ -24,7 +24,7 @@ void main() {
 
    printf("Is baking manual? (1 - yes, 0 - no): ");
    scanf("%d", &manual_baking);
-   if (manual_baking != 1 && manual_baking != 0) {
+   if (manual_baking != 1 &&  manual_baking != 0) {
       printf("Invalid input");
       return;
    }
