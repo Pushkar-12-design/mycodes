@@ -23,6 +23,6 @@ void main() {
       printf("Barcode validated");
    else
       printf("Error in barcode");
-}
+} 
 
 
