@@ -1,0 +1,15 @@
+
+const isLeapYear = (year) => {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+};
+
+const displayLeapYearResult = (year) => {
+    const result = isLeapYear(year) ? 'is a leap year.' : 'is not a leap year.';
+    return `The year ${year} ${result}`;
+};
+
+
+const yearsToCheck = [2000, 2001, 1900, 2020, 2023];
+yearsToCheck.forEach(year => {
+    console.log(displayLeapYearResult(year));
+});
