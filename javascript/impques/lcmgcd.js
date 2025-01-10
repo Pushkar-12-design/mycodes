@@ -18,3 +18,4 @@ const reversedNumber = reverseFiveDigitNumber(number);
 console.log(`The reverse of ${number} is: ${reversedNumber}`); 
 const invalidNumber = 1234;
 console.log(reverseFiveDigitNumber(invalidNumber)); 
+
