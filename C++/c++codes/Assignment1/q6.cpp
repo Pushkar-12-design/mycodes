@@ -2,19 +2,20 @@
 using namespace std;
 
 
-void readMatrix(int** matrix, int cols, int rows = 3) { 
-    cout << "Enter the elements of the matrix (" << rows << "x" << cols << "):\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+void readMatrix(int** matrix, int m = 3, int n = 3) {
+    cout << "Enter elements of the " << m << " x " << n << " matrix:\n";
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
             cin >> matrix[i][j];
         }
     }
 }
 
-void displayMatrix(int** matrix, int cols, int rows = 3) { 
-    cout << "The matrix is:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+void displayMatrix(int** matrix, int m = 3, int n = 3) {
+    cout << "\nThe matrix is:\n";
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
             cout << matrix[i][j] << " ";
         }
         cout << endl;
@@ -22,24 +23,33 @@ void displayMatrix(int** matrix, int cols, int rows = 3) {
 }
 
 int main() {
-    int rows = 3, cols;
-
-
-    cout << "Enter the number of columns (n): ";
-    cin >> cols;
-
-  
-    int** matrix = new int*[rows];
-    for (int i = 0; i < rows; i++) {
-        matrix[i] = new int[cols];
+    int m, n;
+    char choice;
+    
+    cout << "Do you want to enter the number of rows? (y/n): ";
+    cin >> choice;
+    
+    if (choice == 'y' || choice == 'Y') {
+        cout << "Enter number of rows (m): ";
+        cin >> m;
+    } else {
+        m = 3; 
+        cout << "Using default row size (m = 3).\n";
     }
 
-
-    readMatrix(matrix, cols);
-    displayMatrix(matrix, cols);
+    cout << "Enter number of columns (n): ";
+    cin >> n;
 
     
-    for (int i = 0; i < rows; i++) {
+    int** matrix = new int*[m];
+    for (int i = 0; i < m; i++) {
+        matrix[i] = new int[n];
+    }
+
+    readMatrix(matrix, m, n);
+    displayMatrix(matrix, m, n);
+
+    for (int i = 0; i < m; i++) {
         delete[] matrix[i];
     }
     delete[] matrix;

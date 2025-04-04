@@ -2,20 +2,21 @@
 using namespace std;
 
 
-void readMatrix(int** matrix, int rows, int cols) {
-    cout << "Enter the elements of the matrix (" << rows << "x" << cols << "):\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+void readMatrix(int** matrix, int m, int n) {
+    cout << "Enter elements of the matrix:\n";
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
             cin >> matrix[i][j];
         }
     }
 }
 
 
-void displayMatrix(int** matrix, int rows, int cols) {
-    cout << "The matrix is:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+void displayMatrix(int** matrix, int m, int n) {
+    cout << "\nThe matrix is:\n";
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
             cout << matrix[i][j] << " ";
         }
         cout << endl;
@@ -23,26 +24,24 @@ void displayMatrix(int** matrix, int rows, int cols) {
 }
 
 int main() {
-    int rows, cols;
-
-    
-    cout << "Enter the number of rows (m): ";
-    cin >> rows;
-    cout << "Enter the number of columns (n): ";
-    cin >> cols;
+    int m, n;
+    cout << "Enter number of rows (m): ";
+    cin >> m;
+    cout << "Enter number of columns (n): ";
+    cin >> n;
 
   
-    int** matrix = new int*[rows];
-    for (int i = 0; i < rows; i++) {
-        matrix[i] = new int[cols];
+    int** matrix = new int*[m];
+    for (int i = 0; i < m; i++) {
+        matrix[i] = new int[n];
     }
 
-    
-    readMatrix(matrix, rows, cols);
-    displayMatrix(matrix, rows, cols);
 
-    
-    for (int i = 0; i < rows; i++) {
+    readMatrix(matrix, m, n);
+    displayMatrix(matrix, m, n);
+
+  
+    for (int i = 0; i < m; i++) {
         delete[] matrix[i];
     }
     delete[] matrix;
