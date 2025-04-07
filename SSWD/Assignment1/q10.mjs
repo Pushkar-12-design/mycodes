@@ -12,4 +12,4 @@ http.createServer((req, res) => {
    } else
       res.end("Provide a number as a query parameter: ?n=45")
 })
-.listen(5000, () => console.log('http://localhost:5000'))
+.listen(5000, () => console.log('http://localhost:5000')) 

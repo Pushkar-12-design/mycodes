@@ -12,4 +12,4 @@
        let imaginaryPart = Math.sqrt(-discriminant) / (2 * a)
        console.log(`Imaginary Roots: ${realPart} ± ${imaginaryPart}i`)
     }
- })(2, 6, 2)
+ })(3, 4, 9)
